@@ -27,6 +27,11 @@ jobs:
   
   - script:    
       npm run test-functional
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Result'
+    inputs:
+      testResultsFiles: '**/test/functional-tests/reports/xml-report/result.xml'
+      testRunTitle: TestRun
 
 - job: macOS
   pool:
