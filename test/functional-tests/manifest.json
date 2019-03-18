@@ -2,6 +2,7 @@
   "Language": "js",
   "Plugins": [
     "html-report",
-    "screenshot"
+    "screenshot",
+    "xml-report"
   ]
 }
