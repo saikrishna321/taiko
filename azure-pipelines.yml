@@ -28,6 +28,13 @@ jobs:
   
   - script:    
       npm run test-functional
+  
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Result'
+    inputs:
+      testResultsFiles: '**/test/functional-tests/reports/xml-report/**/*.xml'
+      testRunTitle: TestRun
+      mergeTestResults: true
 
 - job: macOS
   pool:
@@ -46,6 +53,13 @@ jobs:
 
   - script:    
       npm run test-functional
+
+  - task: PublishTestResults@2
+    displayName: 'Publish Test Result'
+    inputs:
+      testResultsFiles: '**/test/functional-tests/reports/xml-report/**/*.xml'
+      testRunTitle: TestRun
+      mergeTestResults: true
 
 - job: Windows
   pool:
